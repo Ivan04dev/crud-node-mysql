@@ -1,5 +1,7 @@
 Ejemplo de CRUD básico con Node y MySQL
 
+- Abrir CMD
+
 - Para instalar las dependencias
 npm i
 
