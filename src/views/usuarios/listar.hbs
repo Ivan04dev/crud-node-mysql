@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-uppercase">Listado de Usuarios</h3>
+        {{#if usuarios}}
+            <div class="col-md-8 mx-auto">
+                <table class="table table-stripered">
+                    <thead>
+                        <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         {{#each usuarios}}
+                            <tr>
+                                <td>{{nombre}}</td>
+                                <td>{{email}}</td>
+                                <td>
+                                    <div>
+                                        <a class="btn btn-warning" href="/editar/{{id}}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                                <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                                <path d="M16 5l3 3" />
+                                            </svg>
+                                        </a>
+                                        <a class="btn btn-danger" href="/eliminar/{{id}}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                <path d="M10 10l4 4m0 -4l-4 4" />
+                                                <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                         {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        {{else}}
+            <div class="card text-center mx-auto" style="width: 350px;">
+                <div class="card-header">
+                    <h3>Debes crear una persona</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona aquí para crar personas</p>
+                    <a class="btn btn-primary" href="#">Ir a crear persona</a>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>
